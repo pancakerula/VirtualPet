@@ -5,7 +5,7 @@ void setup(){
 }
 void draw(){
 
-int headX = 200;
+int headX = 250;
 int headY = 150;
 
 
