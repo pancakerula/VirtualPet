@@ -1,12 +1,18 @@
+import processing.serial.*;
+import cc.arduino.*;
+Arduino arduino;
 
-void setup(){
+public void setup() {
   size(500, 500);
- 
+  arduino = new Arduino(this, Arduino.list()[0], 57600); //change the [0] to a [1] or [2] etc. if your program doesn't work
 }
-void draw(){
 
-int headX = 250;
-int headY = 150;
+public void draw() {
+  background(192);
+
+  
+  int headX = 250;
+  int headY = arduino.analogRead(5);
 
 
 // FEET
@@ -42,5 +48,7 @@ int headY = 150;
   
   fill(255,165,0); 
   triangle(headX - 10, headY+20, headX + 10, headY+20, headX, headY+40); // orange beak
+  
+  
   
 }
